@@ -1,0 +1,184 @@
+# =============================================================================
+#  IoT Monitor — .gitignore
+#  Covers: Python (backend + agent), Node/TypeScript (frontend),
+#          PyInstaller builds, SQLite databases, logs, env secrets,
+#          Windows binaries, and OS/editor noise.
+# =============================================================================
+
+
+# ─── ENVIRONMENT & SECRETS ───────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+
+# ─── PYTHON ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+*.tar.gz
+
+# mypy / pyright / ruff caches
+.mypy_cache/
+.ruff_cache/
+.pytype/
+pyrightconfig.json
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints/
+
+
+# ─── PYINSTALLER ─────────────────────────────────────────────────────────────
+# Build artefacts (backend/build/, backend/dist/)
+backend/build/
+backend/dist/
+*.spec
+*.pkg
+*.toc
+*.pyz
+base_library.zip
+warn-*.txt
+xref-*.html
+localpycs/
+
+
+# ─── DATABASES & PERSISTENT DATA ─────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# Runtime app_data produced by the backend
+backend/app_data/backups/
+backend/app_data/data/
+backend/app_data/logs/
+backend/app_data/config/
+# Keep settings template but not the live generated file
+backend/app_data/settings.json
+
+
+# ─── LOG FILES ───────────────────────────────────────────────────────────────
+*.log
+logs/
+*.log.*
+
+
+# ─── NODE / FRONTEND ─────────────────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.cache/
+frontend/tsconfig.tsbuildinfo
+*.local
+
+# npm / yarn / pnpm debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+
+# ─── COMPILED / BINARY OUTPUTS ───────────────────────────────────────────────
+# Windows installer output
+Output/
+*.exe
+*.dll
+*.lib
+*.pyd
+*.pdb
+
+# InnoSetup installer binary (the .iss script is source — keep it)
+innosetup_installer.exe
+
+
+# ─── MOSQUITTO BUNDLED INSTALLATION ──────────────────────────────────────────
+# The entire mosquitto/ folder is a third-party binary distribution.
+# Only the config file that you customise should be tracked.
+mosquitto/*.exe
+mosquitto/*.dll
+mosquitto/devel/
+mosquitto/dashboard/lib/
+# Uncomment the next line to exclude the whole bundle entirely:
+# mosquitto/
+
+
+# ─── OS GENERATED ────────────────────────────────────────────────────────────
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+
+# ─── EDITORS & IDEs ──────────────────────────────────────────────────────────
+# VS Code (allow shared extension recommendations)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains / PyCharm
+.idea/
+*.iml
+
+# Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vim / Emacs swap files
+*.swp
+*.swo
+[._]*.s[a-v][a-z]
+[._]*.s[w-z]
+Session.vim
+
+
+# ─── MISCELLANEOUS ───────────────────────────────────────────────────────────
+# Temporary files
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# Compiled query/qc files (if they are build artefacts)
+# Remove these two lines if `qc` and `query` are source files you want tracked
+# qc
+# query

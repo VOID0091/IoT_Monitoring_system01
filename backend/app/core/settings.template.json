@@ -1,0 +1,16 @@
+{
+    "DEBUG": false,
+    "PORT": 8080,
+    "SECRET_KEY": "change-this-to-a-very-long-random-secret-key-in-production",
+    "DATABASE_URL": "sqlite+aiosqlite:///C:/ProgramData/PhantomationDeviceOps/data/phantomation_deviceops.db",
+    "MQTT_HOST": "127.0.0.1",
+    "MQTT_PORT": 1883,
+    "MQTT_USERNAME": "",
+    "MQTT_PASSWORD": "",
+    "CPU_WARNING_THRESHOLD": 75.0,
+    "CPU_CRITICAL_THRESHOLD": 90.0,
+    "RAM_WARNING_THRESHOLD": 80.0,
+    "RAM_CRITICAL_THRESHOLD": 95.0,
+    "TEMP_WARNING_THRESHOLD": 70.0,
+    "TEMP_CRITICAL_THRESHOLD": 85.0
+}
